@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "licorne",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-licorne-dev-160125-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/5270db1e1f395e8ee1ac1fa18929a2df4bfa250d"
+}

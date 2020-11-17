@@ -1,16 +1,57 @@
 {
   "name": "licorne",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
-  },
+  "private": true,
   "description": "licorne test project",
+  "author": {
+    "name": "wawan",
+    "email": "erwan@compilatio.net"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite"
+  },
   "main": "./src/main.js",
-  "author": "wawan <erwan@compilatio.net>",
-  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
+    "@aws-amplify/ui-vue": "^0.2.27",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "aws-amplify": "^3.3.8",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "firebase": "^8.0.2",
     "vite": "^1.0.0-rc.9",
     "vue": "^3.0.2"
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "_id": "licorne@1.0.0",
+  "license": "MIT",
+  "readme": "ERROR: No README data found!"
 }

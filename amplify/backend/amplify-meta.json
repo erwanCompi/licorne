@@ -1,0 +1,42 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-licorne-dev-160125-authRole",
+      "UnauthRoleArn": "arn:aws:iam::670577461336:role/amplify-licorne-dev-160125-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::670577461336:role/amplify-licorne-dev-160125-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-licorne-dev-160125-deployment",
+      "UnauthRoleName": "amplify-licorne-dev-160125-unauthRole",
+      "StackName": "amplify-licorne-dev-160125",
+      "StackId": "arn:aws:cloudformation:eu-west-1:670577461336:stack/amplify-licorne-dev-160125/c4c4b660-28e5-11eb-862b-0660af4ac430",
+      "AmplifyAppId": "dqw4cm12in8fv"
+    }
+  },
+  "api": {
+    "licorne": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "licorne demo"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "qopvkabqyrc2rbybvh5ffrbgby",
+        "GraphQLAPIEndpointOutput": "https://qd7ljeg5kzh3dptuwan3jpy7wa.appsync-api.eu-west-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-2mzhavpeejhkvgxstr2h5hh3x4"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-licorne-dev-160125-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apilicorne"
+      },
+      "lastPushTimeStamp": "2020-11-17T15:40:11.271Z",
+      "lastPushDirHash": "qCnS/ukfCq+L86UIuTi2D1K+lKY="
+    }
+  }
+}

@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-const app = createApp(App)
+import amplify from './modules/amplify.ts'
+import firebase from './modules/firebase.ts'
 
-app.mount('#app')
+console.log(amplify)
+console.log(firebase)
+
+createApp(App).mount('#app')

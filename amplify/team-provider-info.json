@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-licorne-dev-160125-authRole",
+      "UnauthRoleArn": "arn:aws:iam::670577461336:role/amplify-licorne-dev-160125-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::670577461336:role/amplify-licorne-dev-160125-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-licorne-dev-160125-deployment",
+      "UnauthRoleName": "amplify-licorne-dev-160125-unauthRole",
+      "StackName": "amplify-licorne-dev-160125",
+      "StackId": "arn:aws:cloudformation:eu-west-1:670577461336:stack/amplify-licorne-dev-160125/c4c4b660-28e5-11eb-862b-0660af4ac430",
+      "AmplifyAppId": "dqw4cm12in8fv"
+    }
+  }
+}

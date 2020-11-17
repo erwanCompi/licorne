@@ -23,9 +23,12 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
     setup () {
-        
+        const user = {
+            email: 'licorne@submary.com',
+            password: 'licorne'
+        }
 
-        return {}
+        return { user }
     }
 })
 </script>
