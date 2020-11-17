@@ -1,0 +1,16 @@
+{
+  "name": "licorne",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "description": "licorne test project",
+  "main": "./src/main.js",
+  "author": "wawan <erwan@compilatio.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^1.0.0-rc.9",
+    "vue": "^3.0.2"
+  }
+}
