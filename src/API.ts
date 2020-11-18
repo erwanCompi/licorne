@@ -5,12 +5,10 @@
 export type CreateTodoInput = {
   id?: string | null,
   name: string,
-  description?: string | null,
 };
 
 export type ModelTodoConditionInput = {
   name?: ModelStringInput | null,
-  description?: ModelStringInput | null,
   and?: Array< ModelTodoConditionInput | null > | null,
   or?: Array< ModelTodoConditionInput | null > | null,
   not?: ModelTodoConditionInput | null,
@@ -59,7 +57,6 @@ export type ModelSizeInput = {
 export type UpdateTodoInput = {
   id: string,
   name?: string | null,
-  description?: string | null,
 };
 
 export type DeleteTodoInput = {
@@ -69,7 +66,6 @@ export type DeleteTodoInput = {
 export type ModelTodoFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
-  description?: ModelStringInput | null,
   and?: Array< ModelTodoFilterInput | null > | null,
   or?: Array< ModelTodoFilterInput | null > | null,
   not?: ModelTodoFilterInput | null,
@@ -101,7 +97,6 @@ export type CreateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -117,7 +112,6 @@ export type UpdateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -133,7 +127,6 @@ export type DeleteTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -148,7 +141,6 @@ export type GetTodoQuery = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -167,7 +159,6 @@ export type ListTodosQuery = {
       __typename: "Todo",
       id: string,
       name: string,
-      description: string | null,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -180,7 +171,6 @@ export type OnCreateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -191,7 +181,6 @@ export type OnUpdateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -202,7 +191,6 @@ export type OnDeleteTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
-    description: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,

@@ -5,6 +5,7 @@ import firebase from "firebase/app";
 // Add the Firebase services that you want to use
 import "firebase/auth";
 import "firebase/firestore";
+import { App } from 'vue';
 
 var firebaseConfig = {
     apiKey: "AIzaSyDCDE07eHLS2Y0vf9jVY3N4LJCHgnidvkU",
@@ -17,4 +18,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export default firebase
+export default {
+    install: (app: App) => {
+        app.config.globalProperties.$firebase = firebase
+    }
+}

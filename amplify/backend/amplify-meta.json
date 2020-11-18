@@ -35,7 +35,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-licorne-dev-160125-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apilicorne"
       },
-      "lastPushTimeStamp": "2020-11-17T15:40:11.271Z",
+      "lastPushTimeStamp": "2020-11-18T09:06:11.024Z",
       "lastPushDirHash": "qCnS/ukfCq+L86UIuTi2D1K+lKY="
     }
   }
