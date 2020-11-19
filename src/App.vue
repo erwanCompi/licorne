@@ -5,7 +5,7 @@
                 <div class="mb-4">
                     <h1 class="text-grey-900">Todo List (aws)</h1>
                     <div class="flex mt-4">
-                        <input v-model="awsInput" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-700" placeholder="Add Todo">
+                        <input @keyup.enter="addAwsTodo()" v-model="awsInput" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-700" placeholder="Add Todo">
                         <button @click="addAwsTodo()" class="flex-no-shrink p-2 border-2 rounded text-blue-500 border-blue-500 hover:text-white hover:bg-blue-500">Add</button>
                     </div>
                 </div>
@@ -21,15 +21,15 @@
                 <div class="mb-4">
                     <h1 class="text-grey-900">Todo List (firebase)</h1>
                     <div class="flex mt-4">
-                        <input v-model="firebaseInput" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-700" placeholder="Add Todo">
+                        <input @keyup.enter="addfirebaseTodo()" v-model="firebaseInput" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-700" placeholder="Add Todo">
                         <button @click="addfirebaseTodo()" class="flex-no-shrink p-2 border-2 rounded text-blue-500 border-blue-500 hover:text-white hover:bg-blue-500">Add</button>
                     </div>
                 </div>
                 <div>
-                    <div v-for="todo in firebaseTodos" :key="todo" class="flex mb-4 items-center">
+                    <div v-for="(todo, id) in firebaseTodos" :key="todo" class="flex mb-4 items-center">
                         <p class="w-full text-grey-darkest">{{ todo.name }}</p>
                         <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green-500 hover:bg-green-500">Done</button>
-                        <button @click="deleteFirebaseTodo(todo.name)" class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red-500 hover:text-white hover:bg-red-500">Remove</button>
+                        <button @click="deleteFirebaseTodo(id)" class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red-500 hover:text-white hover:bg-red-500">Remove</button>
                     </div>
                 </div>
             </div>
@@ -105,10 +105,7 @@ export default defineComponent({
         const firebaseInput = ref('')
         const firebaseTodos = ref()
         const dbRefObject = firebase.database().ref().child('todos')
-        dbRefObject.set([
-            { name: 'foo'},
-            { name: 'bar'}
-        ])
+
         dbRefObject.on('value', snap => { 
             console.log(snap.val())
             firebaseTodos.value = snap.val()
@@ -177,12 +174,12 @@ export default defineComponent({
         },
         addfirebaseTodo() {
             const todo = { name: this.firebaseInput }
-            this.firebaseTodos.push(todo)
+            var newPostKey = firebase.database().ref().child('todos').push().key;
+            firebase.database().ref('todos/' + newPostKey).set(todo);
+            this.firebaseInput = ''
         },
-        deleteFirebaseTodo(name: string) {
-            // @ts-ignore
-            const todo = this.firebaseTodos.filter(todo => todo.name === name)
-            this.firebaseTodos.splice(this.firebaseTodos.indexOf(todo, 1))
+        deleteFirebaseTodo(id: string) {
+            firebase.database().ref(`todos/${id}`).remove()
         },
         async addAwsTodo() {
             if (!this.awsInput.length) {
@@ -194,6 +191,7 @@ export default defineComponent({
             }
 
             await API.graphql(graphqlOperation(createTodo, { input: eventDetails }));
+            this.awsInput = ''
         },
         async deleteAwsTodo(id: string) {
 
